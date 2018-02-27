@@ -57,7 +57,7 @@
     <div class="sysmap">
             <div class="" id="maps"></div>
             <!-- <div class="page maskbg"></div> -->
-            <div class="sysmap-pop" style="top:294px; left:900px;">
+            <div class="sysmap-pop" style="top:20%; left:30%;">
                 <div class="sysmap-pop-body">
                     <div class="pop-title">东江大桥</div>
                     <div class="pop-conts">
@@ -246,12 +246,15 @@
     <script>
         seajs.use(["jq", "run",  "load"], function (j, r,load) {
             r.sysindex();
+            var w=$(window).width();
+            var h=$(window).height();
             var map = new BMap.Map("maps");    
         var point = new BMap.Point(116.404, 39.915);    
          map.centerAndZoom(point, 15); 
          map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
          map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用   
-        
+         //var opts = {type: BMAP_NAVIGATION_CONTROL_ZOOM,offset: new BMap.Size(600,900)} 
+        // map.addControl(new BMap.NavigationControl(opts)); 
         });
          
     </script>
