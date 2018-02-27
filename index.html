@@ -1,0 +1,260 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="icon" href="ql.ico">
+    <title>桥梁防撞预警数据运营采集中心</title>
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="css/base.css" rel="stylesheet" type="text/css" />
+    <link href="css/sysindex.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="sysbody">
+    <!--加载层-->
+    <div class="loadprogress" id="loadprogress">
+        <div class="progress">
+            <div class="progressyuan">
+                <div class="proleft pro">
+                    <b id="lb"></b>
+                </div>
+                <div class="proright pro">
+                    <b id="rb"></b>
+                </div>
+                <div class="protxt">
+                    <span class="bf" id="bf">0%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--浏览器判断层-->
+    <div class="browser">
+        <div class="browser_mask"></div>
+        <div class="browser_tit">
+            <img src="images/ieup2.png" alt="" class="browser_icon">
+            <span>您的浏览器版本过低，请升级，你可以选择</span>
+            <a href="https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads" target="_blank">
+                <img src="images/ieicon.png" alt="">
+                <b>升级ie到10及以上</b>
+            </a>
+            <a href="http://www.google.cn/chrome/browser/desktop/index.html" target="_blank">
+                <img src="images/choicon.png" alt="">
+                <b>使用Chrome浏览器</b>
+            </a>
+            <span class="cizhi">最佳显示屏幕分辨率为1366*768</span>'
+            <div class="browser_close">
+                <img src="images/close.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!--头部-->
+    <div class="sysheader">桥梁防撞预警数据运营采集中心</div>
+
+    <div class="sysmap">
+            <div class="" id="maps"></div>
+            <!-- <div class="page maskbg"></div> -->
+            <div class="sysmap-pop" style="top:294px; left:900px;">
+                <div class="sysmap-pop-body">
+                    <div class="pop-title">东江大桥</div>
+                    <div class="pop-conts">
+                        <label>地址：广东省广州市黄埔区</label>
+                        <label>预警总数：3497次</label>
+                    </div>
+                    <div class="pop-footbut">
+                        <a href="index_video.html" class="one">查看实时视频</a>
+                        <a href="../system515">查看AIS信息</a>
+                    </div>
+                </div>
+                <div class="sysmap-pop-sj"></div>
+            </div>
+         </div> 
+    <!--中部-->
+    <div class="syscontent pt50 clear"> 
+        <div class="sysedge left fl">
+            <div class="sysbox">
+                <label class="systips">当前已接入桥梁<span>10</span>座/隧道<span>1</span>座</label> 
+                <div class="systitle">未处理预警次数</div>
+                <div class="syscadr one">
+                    <div class="syscadr-title">未处理预警</div>
+                    <div class="syscadr-ci"><b>21.123</b><span>万次</span></div>
+                    <div class="syscadr-tip">累计预警次数1280万次</div>
+                </div>
+            </div>
+            <div class="sysbox">
+                <div class="systitle">在线设备状态预警区</div>
+                <div class="syscadr two">
+                    <div class="syscadr-hear clear">
+                        <div class="fl">设备在线</div>
+                        <div class="fr">异常设备处理<span>2</span>处</div>
+                    </div>
+                    <div class="syscadr-yuan clear" id="syscadr-yuan"></div>
+                    <table class="systabel">
+                        <tbody>
+                            <tr><td>广州</td><td>东江公路铁路大桥</td><td>球机</td><td>故障</td><td><a href="#">点击处理</a></td></tr>
+                            <tr><td>广州</td><td>东江公路铁路大桥</td><td>球机</td><td>故障</td><td><a href="#">点击处理</a></td></tr>
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+            <div class="sysbox">
+                <div class="systitle">水文气象状态预警区</div>
+                <div class="syscadr clear">
+                    <div class="sysweat-box fl wen">
+                        <i class="sysicon">&#xe7ec;</i>
+                        <span>天气</span>
+                        <label>阵雨</label>
+                        <b></b>
+                    </div>
+                    <div class="sysweat-box fl">
+                        <i class="sysicon">&#xe63e;</i>
+                        <span>风速</span>
+                        <label>10</label>
+                        <b>m/s</b>
+                    </div>
+                    <div class="sysweat-box fl">
+                        <i class="sysicon">&#xe63c;</i>
+                        <span>通航净高</span>
+                        <label>18</label>
+                        <b>m</b>
+                    </div>
+                    <div class="sysweat-box fl">
+                        <i class="sysicon">&#xe6af;</i>
+                        <span>能见度</span>
+                        <label>500</label>
+                        <b>m</b>
+                    </div>
+                    <div class="sysweat-box fl mr0">
+                        <i class="sysicon">&#xe602;</i>
+                        <span>水流流速</span>
+                        <label>20</label>
+                        <b>m/s</b>
+                    </div>
+                    <!-- 以下为备用其他天气类型 -->
+                    <!-- <div class="pa10">以下为可选择天气类型 </div>
+                    <div class="sysweat-box fl wen">
+                        <i class="sysicon">&#xe603;</i>
+                        <span>天气</span>
+                        <label>晴天</label>
+                        <b></b>
+                    </div>
+                    <div class="sysweat-box fl wen">
+                        <i class="sysicon">&#xe66b;</i>
+                        <span>天气</span>
+                        <label>多云</label>
+                        <b></b>
+                    </div>
+                    <div class="sysweat-box fl wen">
+                        <i class="sysicon">&#xe600;</i>
+                        <span>天气</span>
+                        <label>雾天</label>
+                        <b></b>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+        <div class="sysedge right fr">
+            <div class="sysbox">
+                <div class="systitle mt20">偏航预警区</div>
+                <div class="syscadr clear">
+                     <div class="sysvideo fl ">
+                         <div class="tv video1"></div>
+                         <i class="sysicon tvbut">&#xe61d;</i>
+                     </div>
+                     <div class="sysvideo fl">
+                        <div class="tv video2"></div>
+                        <i class="sysicon tvbut">&#xe61d;</i>
+                     </div>
+                     <div class="sysvideo fl mr0">
+                        <div class="tv video3"></div>
+                        <i class="sysicon tvbut">&#xe61d;</i>
+                     </div>   
+                </div>
+            </div>
+            <div class="sysbox">
+                    <div class="systitle">超高预警区</div>
+                    <div class="syscadr clear">
+                            <div class="sysvideo fl ">
+                                <div class="tv video4"></div>
+                                <i class="sysicon tvbut">&#xe61d;</i>
+                            </div>
+                            <div class="sysvideo fl">
+                               <div class="tv video5"></div>
+                               <i class="sysicon tvbut">&#xe61d;</i>
+                            </div>
+                            <div class="sysvideo fl mr0">
+                               <div class="tv video6"></div>
+                               <i class="sysicon tvbut">&#xe61d;</i>
+                            </div>   
+                   </div>
+            </div>
+            <div class="sysbox">
+                        <div class="systitle">墩桥防护预警区</div>
+                        <div class="syscadr clear">
+                                <div class="sysvideo fl ">
+                                    <div class="tv video7"></div>
+                                    <i class="sysicon tvbut">&#xe61d;</i>
+                                </div>
+                                <div class="sysvideo fl">
+                                   <div class="tv video8"></div>
+                                   <i class="sysicon tvbut">&#xe61d;</i>
+                                </div>
+                                <div class="sysvideo fl mr0">
+                                   <div class="tv video9"></div>
+                                   <i class="sysicon tvbut">&#xe61d;</i>
+                                </div>   
+                           </div>
+            </div>
+            <div class="sysbox">
+                <div class="systitle">桥区信息状态发布区</div>
+                <div class="syscadr">
+                    <table class="systabel">
+                        <thead>
+                            <tr><th>地区</th><th>桥梁名称</th><th>方向</th><th>预警类型</th><th>系统运行状态</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>广州</td><td>东江公路铁路大桥</td><td>上游</td><td>超高</td><td>正常</td></tr>
+                            <tr><td>虎门</td><td>川槎大桥</td><td>下游</td><td>超高</td><td>正常</td></tr>
+                            <tr><td>佛山</td><td>九江大桥</td><td>上游</td><td>偏航</td><td class="err">异常</td></tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sysfooter">
+        <marquee direction="left" behavior="scroll">
+            <span><a href="#">港珠澳大桥</a> —— 阵雨 <a href="#">风速：</a>10M/S <a href="#">当前通航净高：</a>18米 <a href="#">当前能见度：</a>500米，<a href="#"> 当前水流流速：</a>20M/S</span> 
+            <span class="ml20"><a href="#">东江大桥</a> —— 阵雨  <a href="#">风速：</a>10M/S <a href="#">当前通航净高：</a>18米 <a href="#">当前能见度：</a>500米，<a href="#">当前水流流速：</a>20M/S</span> 
+            <span class="ml20"><a href="#">东江大桥</a> —— 阵雨  <a href="#">风速：</a>10M/S <a href="#">当前通航净高：</a>18米 <a href="#">当前能见度：</a>500米，<a href="#">当前水流流速：</a>20M/S</span>   
+            <span><a href="#">港珠澳大桥</a> —— 阵雨 <a href="#">风速：</a>10M/S <a href="#">当前通航净高：</a>18米 <a href="#">当前能见度：</a>500米，<a href="#"> 当前水流流速：</a>20M/S</span> 
+        </marquee>
+    </div>
+
+    <script language="JavaScript" charset="utf-8" src="js/preloadjs-0.6.2.min.js"></script>
+    <script src="js/sea.js"></script>
+    <script src="js/seaconfig2.0.js"></script>
+    <script src="js/echarts.common.min.js"></script>
+    <script src="js/data_view.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=6sD61sSbI9v3BrnUeanM8NTe3SBPhOPK"></script>
+    <script>
+        seajs.use(["jq", "run",  "load"], function (j, r,load) {
+            r.sysindex();
+            var map = new BMap.Map("maps");    
+        var point = new BMap.Point(116.404, 39.915);    
+         map.centerAndZoom(point, 15); 
+         map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
+         map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用   
+        
+        });
+         
+    </script>
+</body>
+
+</html>
