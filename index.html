@@ -57,7 +57,7 @@
     <div class="sysmap">
             <div class="" id="maps"></div>
             <!-- <div class="page maskbg"></div> -->
-            <div class="sysmap-pop" style="top:20%; left:30%;">
+            <!-- <div class="sysmap-pop" style="top:20%; left:30%;">
                 <div class="sysmap-pop-body">
                     <div class="pop-title">东江大桥</div>
                     <div class="pop-conts">
@@ -70,7 +70,8 @@
                     </div>
                 </div>
                 <div class="sysmap-pop-sj"></div>
-            </div>
+            </div> -->
+            <img src="images/popsj.png" alt="">
          </div> 
     <!--中部-->
     <div class="syscontent pt50 clear"> 
@@ -246,15 +247,66 @@
     <script>
         seajs.use(["jq", "run",  "load"], function (j, r,load) {
             r.sysindex();
-            var w=$(window).width();
-            var h=$(window).height();
-            var map = new BMap.Map("maps");    
-        var point = new BMap.Point(116.404, 39.915);    
-         map.centerAndZoom(point, 15); 
-         map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
-         map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用   
-         //var opts = {type: BMAP_NAVIGATION_CONTROL_ZOOM,offset: new BMap.Size(600,900)} 
-        // map.addControl(new BMap.NavigationControl(opts)); 
+            
+
+        // 百度地图API功能
+			var map = new BMap.Map("maps");
+			var point = new BMap.Point(113.789367,21.931987); //地图中心点
+			map.centerAndZoom(point,13);
+			map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
+			map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用   
+
+			//定位功能
+			var geolocation = new BMap.Geolocation();
+			geolocation.getCurrentPosition(function(r){
+				loading = true;
+				if(this.getStatus() == BMAP_STATUS_SUCCESS){
+					var mk = new BMap.Marker(r.point);
+		//            map.addOverlay(mk);
+					map.centerAndZoom(r.point,13);
+					map.panTo(r.point);
+		//			if(!loading){
+		//                toast.hide();
+		//			}
+		//			alert('您的位置：'+r.point.lng+','+r.point.lat);
+				}
+				else {
+		//			alert('failed'+this.getStatus());
+				}
+			},{enableHighAccuracy: true});
+			
+			//添加标注
+			var point = new window.BMap.Point(113.396909, 22.527225);
+			var marker = new window.BMap.Marker(point);
+
+			marker.addEventListener("click", function (e) {
+
+				var p = new window.BMap.Point(113.396909, 22.527225);
+
+				// var markerInfo = "<p style='font-size:14px;line-height:1.5em;'><p><span style='font-size:18px;font-weight: bold'> 停车场名称 </span></p>" +
+				// 		"<p>地址：停车场位置</p>" +
+				// 		"<p>停车位：200</p>" +
+				// 		"<p>剩余停车位：100</p>" +
+				// 		"<p><a href='http://www.baidu.com'>点击预约</a></p>" +
+                //         "</p>";
+                var ma='<div class="sysmap-pop">'+
+                '<div class="sysmap-pop-body">'+
+                    '<div class="pop-title">东江大桥</div>'+
+                    '<div class="pop-conts">'+
+                        '<label>地址：广东省广州市黄埔区</label>'+
+                        '<label>预警总数：3497次</label>'+
+                    '</div>'+
+                    '<div class="pop-footbut">'+
+                       '<a href="index_video.html" class="one">查看实时视频</a>'+
+                        '<a href="../system515">查看AIS信息</a>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="sysmap-pop-sj"><img src="images/popsj.png" alt=""></div>'+
+            '</div>'        
+				map.openInfoWindow(new BMap.InfoWindow(ma), p);
+			});
+
+			map.addOverlay(marker);
         });
          
     </script>
