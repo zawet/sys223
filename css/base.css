@@ -2,7 +2,7 @@
 
 /*****************************公用图标字体架构*****************************/
 @font-face {
-  font-family: 'sysicons';  /* project id 573779 */
+  font-family: 'sysicon';  /* project id 573779 */
   src: url('../iconfont/iconfont.eot'); /* IE9*/
   src: url('../iconfont/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
   url('../iconfont/iconfont.woff') format('woff'), /* chrome, firefox */
@@ -10,7 +10,7 @@
   url('../iconfont/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
 }
 @font-face {
-  font-family: 'sysicon';  /* project id 573779 */
+  font-family: 'sysiconss';  /* project id 573779 */
   src: url('//at.alicdn.com/t/font_573779_lcnhysr634wbfbt9.eot');
   src: url('//at.alicdn.com/t/font_573779_lcnhysr634wbfbt9.eot?#iefix') format('embedded-opentype'),
   url('//at.alicdn.com/t/font_573779_lcnhysr634wbfbt9.woff') format('woff'),
