@@ -18,6 +18,21 @@ define(function (require, exports) { //dedine闭包
 		$(".tvbut").click(function () {
 			$(this).hide().parent().find("video")[0].play();
 		});
+		$(".sy_nav li").click(function () {
+			$(this).toggleClass("active").siblings().removeClass("active");
+		});
+		$(".sy_nav_btn").click(function () {
+			$(this).parent().find(".sy_nav_se").toggleClass("open").parent().siblings().find(".sy_nav_se").removeClass("open");
+		});
+
+
+		$(".sys-select .has .btn").click(function () {
+			$(this).find("i").toggleClass("r90");
+			$(this).next(".ziul").first().toggle();
+		});
+
+		
+
 
 	}
 

@@ -1,0 +1,240 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="icon" href="ql.ico">
+    <title>AIS VHF</title>
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="css/base.css" rel="stylesheet" type="text/css" />
+    <link href="css/sysindex.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="sysbody">
+    <!--加载层-->
+    <div class="loadprogress" id="loadprogress">
+        <div class="progress">
+            <div class="progressyuan">
+                <div class="proleft pro">
+                    <b id="lb"></b>
+                </div>
+                <div class="proright pro">
+                    <b id="rb"></b>
+                </div>
+                <div class="protxt">
+                    <span class="bf" id="bf">0%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!--头部-->
+ 
+    <div class="sy_logo">东江大桥<b class="lu"></b><b class="ru"></b><b class="ld"></b><b class="rd"></b></div>
+    <div class="sy_heard clear trn">
+        <ul class="sy_nav clear">
+            <li class="active"><a href="index.html">首页</a></li>
+            <li><a class="sy_nav_btn">监测中心</a>
+                <ul class="sy_nav_se trn">
+                    <li><a href="#">超高预警</a></li>
+                    <li><a href="#">偏航预警</a></li>
+                    <li><a href="#">非通航区预警</a></li>
+                    <li><a href="#">水文气象预警</a></li>
+                    <li><a href="#">设备状态预警</a></li>
+                    <li><a href="#">流量统计</a></li>
+                    <li><a href="#">AIS预警</a></li>
+                </ul>
+            </li>
+            <li><a class="sy_nav_btn">取证中心</a>
+                <ul class="sy_nav_se trn">
+                    <li><a href="#">超高</a></li>
+                </ul>
+            </li>
+            <li><a class="sy_nav_btn" >运营管理</a>
+                <ul class="sy_nav_se trn">
+                    <li><a href="#">巡检维护</a></li>
+                    <li><a href="#">巡检报告</a></li>
+                    <li><a href="#">运行日志</a></li>
+                    <li><a href="#">运行报告</a></li>
+                    <li><a href="#">事故报告</a></li>
+                </ul>
+            </li>
+            <li><a href="#">基础信息</a></li>
+            <li><a href="#">权限管理</a></li>
+            <li><a href="#">数据分析</a></li>
+        </ul>
+        <!-- <div class="sy_select">
+            <a class="select_btn">管理人员<i class="syicon">&#xe611;</i></a>
+            <div class="sy_select_mian">
+                <a>个人信息</a>
+                <a>修改密码</a>
+                <hr>
+                <a>退出</a>
+            </div>
+        </div>
+        <a class="sy_heard_ibtn trn">
+        	<i class="syicon">&#xe629;</i>
+        </a> -->
+    </div>
+    
+
+    <div class="sysmap"><div class="one" id="maps"></div></div> 
+
+    <!--中部-->
+    <div class="syscontent pt50 clear"> 
+        
+        <div class="sysedge right fr">
+            <div class="sysbox">
+                <div class="systitle">当日及历史船舶流量统计</div>
+                <div class="sydata_mian" id="today_count"></div>
+            </div>
+            <div class="sysbox">
+                <div class="syscadr">
+                    <table class="systabel">
+                        <thead>
+                            <tr><th>船舶</th><th>航向</th><th>经纬度</th><th>航速</th><th></th></tr></thead>
+                        <tbody>
+                            <tr><td>粤顺231</td><td>上游</td><td>223、123</td><td>3节</td><td><a href="#">VHF呼叫</a></td></tr>
+                            <tr><td>粤顺231</td><td>上游</td><td>223、123</td><td>3节</td><td><a href="#">VHF呼叫</a></td></tr>
+                            <tr><td>粤顺231</td><td>上游</td><td>223、123</td><td>3节</td><td><a href="#">VHF呼叫</a></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="sysbox">
+                <div class="systitle">水文气象状态预警区</div>
+                <div class="syscadr clear four">
+                    <div class="sysweat-box fl wen">
+                        <i class="sysicon">&#xe603;</i>
+                        <span>天气</span>
+                        <label>晴天</label>
+                        <b></b>
+                    </div>
+                    <div class="sysweat-box fl">
+                        <i class="sysicon">&#xe63c;</i>
+                        <span>通航净高</span>
+                        <label>18</label>
+                        <b>m</b>
+                    </div>
+                    <div class="sysweat-box fl">
+                        <i class="sysicon">&#xe6af;</i>
+                        <span>能见度</span>
+                        <label>500</label>
+                        <b>m</b>
+                    </div>
+                    <div class="sysweat-box fl mr0">
+                        <i class="sysicon">&#xe602;</i>
+                        <span>水流流速</span>
+                        <label>20</label>
+                        <b>m/s</b>
+                    </div>
+                    <!-- 以下为备用其他天气类型 -->
+                    <!-- <div class="pa10">以下为可选择天气类型 </div>
+                    <div class="sysweat-box fl wen">
+                        <i class="sysicon">&#xe7ec;</i>
+                        <span>天气</span>
+                        <label>阵雨</label>
+                        <b></b>
+                    </div>
+                    <div class="sysweat-box fl wen">
+                        <i class="sysicon">&#xe66b;</i>
+                        <span>天气</span>
+                        <label>多云</label>
+                        <b></b>
+                    </div>
+                    <div class="sysweat-box fl wen">
+                        <i class="sysicon">&#xe600;</i>
+                        <span>天气</span>
+                        <label>雾天</label>
+                        <b></b>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sysfooter"> <span style="color:#122552">中山市聚云软件科技有限公司   版权所有</span> </div>
+
+    <script language="JavaScript" charset="utf-8" src="js/preloadjs-0.6.2.min.js"></script>
+    <script src="js/sea.js"></script>
+    <script src="js/seaconfig2.0.js"></script>
+    <script src="js/echarts.common.min.js"></script>
+    <script src="js/data_view.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=6sD61sSbI9v3BrnUeanM8NTe3SBPhOPK"></script>
+    <script>
+         xrzx('today_count',datas.tc.data,datas.tc.tit);
+        window.onresize=function(){
+            xrzx('today_count',datas.tc.data,datas.tc.tit);
+        }  
+        seajs.use(["jq", "run",  "load"], function (j, r,load) {
+            r.sysindex();
+
+           
+        // 百度地图API功能
+			var map = new BMap.Map("maps");
+			var point = new BMap.Point(113.789367,21.931987); //地图中心点
+			map.centerAndZoom(point,13);
+			map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
+			map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用   
+
+			//定位功能
+			var geolocation = new BMap.Geolocation();
+			geolocation.getCurrentPosition(function(r){
+				loading = true;
+				if(this.getStatus() == BMAP_STATUS_SUCCESS){
+					var mk = new BMap.Marker(r.point);
+		//            map.addOverlay(mk);
+					map.centerAndZoom(r.point,13);
+					map.panTo(r.point);
+		//			if(!loading){
+		//                toast.hide();
+		//			}
+		//			alert('您的位置：'+r.point.lng+','+r.point.lat);
+				}
+				else {
+		//			alert('failed'+this.getStatus());
+				}
+			},{enableHighAccuracy: true});
+			
+			//添加标注
+			var point = new window.BMap.Point(113.396909, 22.527225);
+			var marker = new window.BMap.Marker(point);
+
+			marker.addEventListener("click", function (e) {
+
+				var p = new window.BMap.Point(113.396909, 22.527225);
+
+				// var markerInfo = "<p style='font-size:14px;line-height:1.5em;'><p><span style='font-size:18px;font-weight: bold'> 停车场名称 </span></p>" +
+				// 		"<p>地址：停车场位置</p>" +
+				// 		"<p>停车位：200</p>" +
+				// 		"<p>剩余停车位：100</p>" +
+				// 		"<p><a href='http://www.baidu.com'>点击预约</a></p>" +
+                //         "</p>";
+                var ma='<div class="sysmap-pop">'+
+                '<div class="sysmap-pop-body">'+
+                    '<div class="pop-title">东江大桥</div>'+
+                    '<div class="pop-conts">'+
+                        '<label>地址：广东省广州市黄埔区</label>'+
+                        '<label>预警总数：3497次</label>'+
+                    '</div>'+
+                    '<div class="pop-footbut">'+
+                       '<a href="index_video.html" class="one only">查看实时视频</a>'+
+                        
+                    '</div>'+
+                '</div>'+
+                '<div class="sysmap-pop-sj"><img src="images/popsj.png" alt=""></div>'+
+            '</div>'        
+				map.openInfoWindow(new BMap.InfoWindow(ma), p);
+			});
+
+			map.addOverlay(marker);
+        });
+         
+    </script>
+</body>
+
+</html>

@@ -10,8 +10,8 @@ define(function (require, exports) { //dedine闭包
                 src: "images/mapbg.png"
             },
             {
-                id: "sysmap-pop-sj",
-                src: "images/popsj.png"
+                id: "vbg",
+                src: "images/videobg.png"
             },
             
             {

@@ -54,11 +54,17 @@ width:600px; height: 500px;  box-sizing: border-box; padding: 10px;background:ur
    -webkit-mask-position:50% 50%;
    -webkit-mask-size:100% 100%;
   }
+#maps.one{  
+    -webkit-mask-image:url("../images/maskbg3.png");
+    -webkit-mask-position:0 50%;
+    -webkit-mask-size:100% 100%;
+   }
 .page{ width: 100%; height: 100%;  position:  fixed; top: 0; left: 0; overflow: hidden; z-index: 65;}
 .page img{display: block; height: 100%;  }
 .page img.w{ width: 100%; height: auto; margin: 0;}
 
 .sysedge{ position: relative; z-index: 99999; width: 400px; top: 0; height: 100%;box-sizing: border-box; padding-top: 85px; }
+
 .sysedge.left{left: 30px;}
 .sysedge.right{right: 30px;}
 
@@ -87,17 +93,25 @@ width:600px; height: 500px;  box-sizing: border-box; padding: 10px;background:ur
 .systabel>tbody>tr>td.err { color: #d4152f;}
 
 .sysweat-box{ width: 18%; background: rgba(180,180,180,0.3); border-radius:12px; box-sizing: border-box; height: 150px; margin-right: 2.5%; color: #fff; text-align: center;}
+.four .sysweat-box{ width: 23%;}
 .sysweat-box i{display: block; font-size: 34px; color: #e1e1e1; padding: 10px 0 5px;}
 .sysweat-box span{ display: block; font-size: 12px; color:#ddd; padding: 2px 0;  }
 .sysweat-box.wen label{ font-size: 20px;}
 .sysweat-box label{ display: block; font-size:36px; color:#10b0ec;  line-height:36px;  padding: 10px 0 2px; }
 .sysweat-box b{ display: block; font-size: 14px; color:#10b0ec; padding: 2px 0;  line-height: 14px; }
 
+
 .sysvideo{ width: 33%; height:100px; margin-right: 0.5%; position: relative;}
 .sysvideo video{ width: 100%; height: 100%; object-fit: fill;}
 .sysvideo .tv{ width: 100%; height: 100%;}
 .sysvideo i{ position: absolute; width: 30px;height: 30px; font-size: 26px; line-height: 30px; top: 50%; left: 50%; margin: -15px; z-index: 666; color: #fff; cursor: pointer;}
 
+.sysedge.videobox{ width: 70%; margin-left: 2%; }
+.sysedge.caozuobox{ width: 24%; margin-right: 2%;}
+.sysedge.videobox .sysvideo{ height: 220px;}
+.sysedge.videobox .systitle{ background-size: 100%;}
+.sysedge.videobox .sysbox{ margin-bottom: 15px;}
+.sysedge.videobox .sysvideo i{width: 50px;height: 50px; font-size: 36px; line-height: 50px; margin: -25px; }
 /* .BMap_pop>div{ display: none!important;}
 .BMap_pop>div:nth-child(9){ display: block!important;  overflow:auto  !important; width: 260px !important; height:200px !important; } */
 .sysmap-pop{width:220px;background: rgba(255,255,255,0.8); border-radius: 8px; box-sizing: border-box;position: absolute;z-index: 66666; left: 0; }
@@ -108,12 +122,56 @@ width:600px; height: 500px;  box-sizing: border-box; padding: 10px;background:ur
 .pop-footbut{ background: #fff; position: absolute; bottom: 0; left: 0; width: 100%; border-radius: 0 0 8px 8px; padding: 8px 0;}
 .pop-footbut a{ color: #10b0ec; font-size: 14px; display: inline-block; width: 49%; text-align: center; padding: 2px 0;}
 .pop-footbut a.one{ border-right:1px solid #10b0ec; }
+.pop-footbut a.only{ border: none; width: 100%;}
 .pop-footbut a:hover{ color: #0d90c0;}
 .sysmap-pop-sj{ position: absolute; top: 100%;  left: 40%; z-index: 6666;}
 
 
 .sysfooter {width: 100%;position: fixed;left: 0;bottom: 0;z-index: 69;color: #fff;font-size: 14px;text-align: center;padding: 5px 0;}
 .sysfooter a{ color: #2aa0fc}
+
+
+/*头部*/
+.sy_logo{ position:fixed; left:00px; top:00px; background:rgba(0,0,0,0.2); border:rgba(255,255,255,0.3); color:rgba(255,255,255,0.8); font-size:22px; padding:10px; z-index:999999; box-sizing:border-box;}
+.sy_logo b{ display:block; position:absolute; width:8px; height:8px;background:rgba(255,255,255,0.6);}
+.sy_logo b.lu{ top:0; left:0;}.sy_logo b.ru{ top:0; right:0;}.sy_logo b.ld{bottom:0; left:0;}.sy_logo b.rd{ bottom:0; right:0;}
+.sy_heard{ position:fixed; width:100%; background: rgba(18,27,82,0.8); height:50px; z-index:999998; top:0; left:0; margin-top:0;}
+.sy_heard.open{ margin-top:0;}
+.sy_nav{ width:1080px; margin:0 auto;}
+.sy_nav>li{ float:left; display:block; position: relative;}
+.sy_nav>li>a{ display:block; color:#eee; height:50px; line-height:50px; padding:0 20px; text-decoration:inherit; font-size:14px;}
+.sy_nav>li>a:hover,.sy_nav>li.active>a{ color:#fff; background: url(../images/mask_bghover.png);}
+.sy_nav_se{ position: absolute; top: -300px; opacity: 0; left: 0; background: rgba(18,27,82,0.6); width: 100%;}
+.sy_nav_se.open{ top: 100%; opacity: 1; }
+.sy_nav_se li a{display:block; color:#eee; line-height:30px; text-decoration:inherit; font-size:14px; text-align: center;}
+.sy_nav_se li a:hover{color:#fff; background: url(../images/mask_bghover.png);}
+
+.sy_select{  position:absolute; right:10px; height:50px; line-height:50px; top:0; width:100px;}
+.sy_select a.select_btn{ padding-left:10px; cursor:pointer; font-size:14px;color:#eee;}
+.sy_select_mian{ position:absolute; top:100%; background:rgba(18,27,82,0.8); left:0; width:100%; display:none;}
+.sy_select_mian a{ display:block; padding:5px 10px; line-height:18px; cursor:pointer;font-size:14px;color:#bbb;}
+.sy_select_mian a:hover{color:#fff; background: url(../images/mask_bghover.png);}
+.sy_heard_ibtn{ position:absolute; width:18px; top:100%; left:50%; margin-left:-9px; color:#fff; display:block; cursor:pointer; color:#aaa;}
+.sy_heard_ibtn:hover{color:#fff;}
+.sy_heard_ibtn i{ font-size:18px;}
+
+.sydata_box{ width:100%; color:#fff; margin-top:15px;}
+.sydata_box.one{ width:100%; margin:0 auto; background:rgba(10,10,10,0.2); padding:15px 0; }
+.sydata_box.one div{ text-align:center; line-height:26px; font-size:14px; color:#f1f1f1;}
+.sydata_box.one div span{ text-decoration:underline; padding:0 10px; color:#fff;}
+.sydata_title{ border-bottom:1px solid rgba(255,255,255,0.15); padding: 10px; font-size:16px;}
+.sydata_title span{ color:#aaa; font-size:14px;}
+.sydata_mian{ height:210px; width: 100%;}
+
+.sys-select{ width: 47%; box-sizing: border-box; background:rgba(255,255,255,0.1); margin-left: 2%; padding: 10px 0; min-height: 202px; }
+.sys-select li{ padding-left: 26px;}
+.sys-select a{ line-height: 26px; display: block; font-size: 14px;color: #aaa;}
+.sys-select a:hover{ color: #eee;}
+.sys-select a.btn{ color: #eee;}
+.sys-select .btn:hover{ color: #fff;}
+
+.sys-select a i{ font-size: 14px; display: inline-block; width: 14px;}
+.ziul{ display: none;}
 
 @media screen and (max-width: 1200px) {
  }

@@ -71,7 +71,7 @@
                 </div>
                 <div class="sysmap-pop-sj"></div>
             </div> -->
-            <img src="images/popsj.png" alt="">
+            
          </div> 
     <!--中部-->
     <div class="syscontent pt50 clear"> 
@@ -245,9 +245,13 @@
     <script src="js/data_view.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=6sD61sSbI9v3BrnUeanM8NTe3SBPhOPK"></script>
     <script>
+        xrzb('syscadr-yuan',datas.rs.data,datas.rs.tit);
+        window.onresize=function(){
+            xrzb('syscadr-yuan',datas.rs.data,datas.rs.tit);
+        }  
         seajs.use(["jq", "run",  "load"], function (j, r,load) {
             r.sysindex();
-            
+
 
         // 百度地图API功能
 			var map = new BMap.Map("maps");
@@ -298,7 +302,7 @@
                     '</div>'+
                     '<div class="pop-footbut">'+
                        '<a href="index_video.html" class="one">查看实时视频</a>'+
-                        '<a href="../system515">查看AIS信息</a>'+
+                        '<a href="index_one.html">查看AIS信息</a>'+
                     '</div>'+
                 '</div>'+
                 '<div class="sysmap-pop-sj"><img src="images/popsj.png" alt=""></div>'+

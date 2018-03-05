@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="icon" href="ql.ico">
+    <title>实时监控</title>
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="css/base.css" rel="stylesheet" type="text/css" />
+    <link href="css/sysindex.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="sysbody">
+    <!--加载层-->
+    <div class="loadprogress" id="loadprogress">
+        <div class="progress">
+            <div class="progressyuan">
+                <div class="proleft pro">
+                    <b id="lb"></b>
+                </div>
+                <div class="proright pro">
+                    <b id="rb"></b>
+                </div>
+                <div class="protxt">
+                    <span class="bf" id="bf">0%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!--头部-->
+    <div class="sy_logo">东江大桥<b class="lu"></b><b class="ru"></b><b class="ld"></b><b class="rd"></b></div>
+    <div class="sy_heard clear trn">
+        <ul class="sy_nav clear">
+            <li class="active"><a href="index.html">首页</a></li>
+            <li><a class="sy_nav_btn">监测中心</a>
+                <ul class="sy_nav_se trn">
+                    <li><a href="#">超高预警</a></li>
+                    <li><a href="#">偏航预警</a></li>
+                    <li><a href="#">非通航区预警</a></li>
+                    <li><a href="#">水文气象预警</a></li>
+                    <li><a href="#">设备状态预警</a></li>
+                    <li><a href="#">流量统计</a></li>
+                    <li><a href="#">AIS预警</a></li>
+                </ul>
+            </li>
+            <li><a class="sy_nav_btn">取证中心</a>
+                <ul class="sy_nav_se trn">
+                    <li><a href="#">超高</a></li>
+                </ul>
+            </li>
+            <li><a class="sy_nav_btn" >运营管理</a>
+                <ul class="sy_nav_se trn">
+                    <li><a href="#">巡检维护</a></li>
+                    <li><a href="#">巡检报告</a></li>
+                    <li><a href="#">运行日志</a></li>
+                    <li><a href="#">运行报告</a></li>
+                    <li><a href="#">事故报告</a></li>
+                </ul>
+            </li>
+            <li><a href="#">基础信息</a></li>
+            <li><a href="#">权限管理</a></li>
+            <li><a href="#">数据分析</a></li>
+        </ul>
+        <!-- <div class="sy_select">
+            <a class="select_btn">管理人员<i class="syicon">&#xe611;</i></a>
+            <div class="sy_select_mian">
+                <a>个人信息</a>
+                <a>修改密码</a>
+                <hr>
+                <a>退出</a>
+            </div>
+        </div>
+        <a class="sy_heard_ibtn trn">
+        	<i class="syicon">&#xe629;</i>
+        </a> -->
+    </div>
+
+   <div class="page vbg"></div>
+    <!--中部-->
+    <div class="syscontent pt50 clear"> 
+        
+        <div class="sysedge fl  videobox">
+            <div class="sysbox">
+                <div class="systitle">偏航预警区</div>
+                <div class="syscadr clear">
+                     <div class="sysvideo fl ">
+                         <div class="tv video1"></div>
+                         <i class="sysicon tvbut">&#xe61d;</i>
+                     </div>
+                     <div class="sysvideo fl">
+                        <div class="tv video2"></div>
+                        <i class="sysicon tvbut">&#xe61d;</i>
+                     </div>
+                     <div class="sysvideo fl mr0">
+                        <div class="tv video3"></div>
+                        <i class="sysicon tvbut">&#xe61d;</i>
+                     </div>   
+                </div>
+            </div>
+            <div class="sysbox">
+                    <div class="systitle">超高预警区</div>
+                    <div class="syscadr clear">
+                            <div class="sysvideo fl ">
+                                <div class="tv video4"></div>
+                                <i class="sysicon tvbut">&#xe61d;</i>
+                            </div>
+                            <div class="sysvideo fl">
+                               <div class="tv video5"></div>
+                               <i class="sysicon tvbut">&#xe61d;</i>
+                            </div>
+                            <div class="sysvideo fl mr0">
+                               <div class="tv video6"></div>
+                               <i class="sysicon tvbut">&#xe61d;</i>
+                            </div>   
+                   </div>
+            </div>
+            <div class="sysbox">
+                        <div class="systitle">墩桥防护预警区</div>
+                        <div class="syscadr clear">
+                                <div class="sysvideo fl ">
+                                    <div class="tv video7"></div>
+                                    <i class="sysicon tvbut">&#xe61d;</i>
+                                </div>
+                                <div class="sysvideo fl">
+                                   <div class="tv video8"></div>
+                                   <i class="sysicon tvbut">&#xe61d;</i>
+                                </div>
+                                <div class="sysvideo fl mr0">
+                                   <div class="tv video9"></div>
+                                   <i class="sysicon tvbut">&#xe61d;</i>
+                                </div>   
+                           </div>
+            </div>
+            
+        </div>
+        <div class="sysedge fr caozuobox">
+                <div class="sysbox clear mb20">
+                    <div class="systitle">当前桥梁</div>
+                   
+                    <ul class="sys-select fl">
+                        <li class="has">
+                            <a class="btn"> <i class="sysicon">&#xe601;</i> 中山海事局</a>
+                            <ul class="ziul">
+                                <li><a>桥一</a></li>
+                                <li><a>桥二</a></li>
+                            </ul>
+                        </li>
+                        <li class="has"><a class="btn"><i class="sysicon">&#xe601;</i>板芙镇政府</a></li>
+                        <li class="has"><a class="btn"><i class="sysicon">&#xe601;</i>广深珠高速</a></li>
+                        <li class="has"><a class="btn"><i class="sysicon">&#xe601;</i>广深珠高速</a></li>
+                        <li class="has"><a class="btn"><i class="sysicon">&#xe601;</i>广州港铁路公司</a></li>
+                        <li class="has"><a class="btn"><i class="sysicon">&#xe601;</i>中山航道局</a></li>
+                        <li class="has"><a class="btn"><i class="sysicon">&#xe601;</i>中山公路局</a></li>
+                    </ul>
+                    <ul class="sys-select fl">
+                        <li class="has">
+                            <a class="btn"><i class="sysicon">&#xe601;</i>预警界面</a>
+                            <ul class="ziul">
+                                <li><a><i class="sysicon"></i>超高预警</a></li>
+                                <li class="has">
+                                    <a class="btn"><i class="sysicon">&#xe601;</i>偏航预警</a>
+                                    <ul class="ziul">
+                                        <li><a>雷达预警</a></li>
+                                        <li><a>热成像预警</a></li>
+                                        <li><a>激光预警</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>    
+                    </div>
+                <div class="sydata_box one">
+                        <div>未处理预警<span>25</span>条</div>
+                        <div>已处理预警<span>1530</span>条</div>
+                    </div>
+                    <div class="sydata_box">
+                        <div class="systitle clear">当日预警统计<span class="fr">2017.5.15</span></div>
+                        <div class="sydata_mian" id="today_warning"></div>
+                    </div>
+                    <div class="sydata_box">
+                        <div class="systitle">预警信息统计</div>
+                        <div class="sydata_mian" id="today_count"></div>
+                    </div>
+                    <div class="sydata_box">
+                        <div class="systitle">设备运行状态</div>
+                        <div class="sydata_mian" id="running_state"></div>
+                    </div>
+        </div>
+    </div>
+
+    <div class="sysfooter"> <span style="color:#fff">中山市聚云软件科技有限公司   版权所有</span> </div>
+
+    <script language="JavaScript" charset="utf-8" src="js/preloadjs-0.6.2.min.js"></script>
+    <script src="js/sea.js"></script>
+    <script src="js/seaconfig2.0.js"></script>
+    <script src="js/echarts.common.min.js"></script>
+    <script src="js/data_view.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=6sD61sSbI9v3BrnUeanM8NTe3SBPhOPK"></script>
+    <script>
+        function xr(){
+        xrtj('today_warning',datas.tw.data,datas.tw.tit);
+        xrzx('today_count',datas.tc.data,datas.tc.tit);
+        xrzb2('running_state',datas.rss.data,datas.rss.tit);
+        }
+
+xr();
+window.onresize=function(){xr()}  
+        seajs.use(["jq", "run",  "load"], function (j, r,load) {
+            r.sysindex();
+        });
+         
+    </script>
+</body>
+
+</html>
